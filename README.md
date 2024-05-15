@@ -1,4 +1,4 @@
-# Sistema de Cadastroo RH
+# Sistema de Cadastro para RH
 Para este projeto, utilizei meus conhecimentos adquiridos no módulo de Nuvem com Microsoft Azure, da trilha .NET da DIO.
 
 # Contexto
