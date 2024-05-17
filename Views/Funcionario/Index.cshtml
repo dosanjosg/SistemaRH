@@ -1,0 +1,77 @@
+@model IEnumerable<SistemaCadastro.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Lista de Funcionarios";
+}
+
+<h2>Lista de Funcionarios</h2>
+
+<p>
+    <a asp-action="Adicionar">Novo Funcionario</a>
+</p>
+
+<table class="table">
+    <thead>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ramal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailProfissional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAdmissao)
+        </th>
+        <th></th>
+    </thead>
+    <tbody>
+        @foreach (var funcionario in Model) 
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => funcionario.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => funcionario.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => funcionario.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => funcionario.Ramal)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => funcionario.EmailProfissional)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => funcionario.Departamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => funcionario.Salario)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => funcionario.DataAdmissao)
+                </td>
+                <td>
+                    <a asp-action="Atualizar" asp-route-id="@funcionario.Id">Atualizar</a> |
+                    <a asp-action="Detalhes" asp-route-id="@funcionario.Id">Detalhes</a> |
+                    <a asp-action="Deletar" asp-route-id="@funcionario.Id">Deletar</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
